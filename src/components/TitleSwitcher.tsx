@@ -8,7 +8,7 @@ export default function TitleSwitcher() {
 
     const handleVisibilityChange = () => {
       if (document.hidden) {
-        document.title = "❓ was it that boring?";
+        document.title = "❓ is it not badass?";
       } else {
         document.title = originalTitle;
       }

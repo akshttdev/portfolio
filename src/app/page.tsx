@@ -1,76 +1,71 @@
 'use client';
-import Image from "next/image";
-import Pic1 from '../../public/images/1.jpg'
-import Pic2 from '../../public/images/2.jpeg'
-import { useScroll, useTransform, motion } from "framer-motion";
-import { useEffect, useRef } from "react";
+
+import Image from 'next/image';
+import Pic2 from '../../public/images/2.jpeg';
+import { useScroll, useTransform, motion, MotionValue } from 'framer-motion';
+import { useEffect, useRef } from 'react';
 import Lenis from 'lenis';
+import Projects from '@/components/Projects';
 
+// Main Home Component
 export default function Home() {
+  const container = useRef<HTMLDivElement | null>(null);
 
-  const container = useRef();
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ["start start", "end end"]
-  }) 
+    offset: ['start start', 'end end'],
+  });
 
-  useEffect( () => {
-    const lenis = new Lenis()
+  useEffect(() => {
+    const lenis = new Lenis();
 
-    function raf(time) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf)
-  }, [])
+    requestAnimationFrame(raf);
+  }, []);
 
   return (
-    <>
-    <main ref={container} className="relative h-[200vh]">
-      <Section1 scrollYProgress={scrollYProgress}/>
-      <Section2 scrollYProgress={scrollYProgress}/>
-    </main>
-    </>
+    <div className="noise">
+      <main ref={container} className="relative h-[200vh]">
+        <Section1 scrollYProgress={scrollYProgress} />
+        <Section2 scrollYProgress={scrollYProgress} />
+      </main>
+      <Projects />
+    </div>
   );
 }
 
-const Section1 = ({scrollYProgress}) => {
+// Props for section components
+interface SectionProps {
+  scrollYProgress: MotionValue<number>;
+}
 
+// Section 1 with scale and rotate on scroll
+const Section1: React.FC<SectionProps> = ({ scrollYProgress }) => {
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
-  const rotate = useTransform(scrollYProgress, [0, 1], [0, -5])
+  const rotate = useTransform(scrollYProgress, [0, 1], [0, -5]);
+
   return (
-    <motion.div style={{scale, rotate}} className=" sticky top-0 border-2px-white text-bold h-screen bg-[#ff0000] text-[3.5rem] flex flex-col items-center justify-center text- pb-[10rem]">
-      <p>Scroll Perspective</p>
-      <div className="flex gap-4">
-        <p>Section</p>
-        <div className="relative w-[12.5rem]">
-          <Image 
-            src={Pic1}
-            alt="img"
-            placeholder="blur"
-            fill
-          />
-        </div>
-        <p>Transition</p>
-      </div>
+    <motion.div
+      style={{ scale, rotate }}
+      className="sticky top-0 h-screen bg-gradient-to-r from-slate-900 via-slate-300 to-slate-900 text-[3.5rem] flex flex-col items-center justify-center text-black font-bold pb-[10rem]"
+    >
+      <p>AKSHAT</p>
     </motion.div>
-  )
-}
+  );
+};
 
-const Section2 = ({scrollYProgress}) => {
-
+// Section 2 with reversed transform
+const Section2: React.FC<SectionProps> = ({ scrollYProgress }) => {
   const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const rotate = useTransform(scrollYProgress, [0, 1], [5, 0])
+  const rotate = useTransform(scrollYProgress, [0, 1], [5, 0]);
 
   return (
-    <motion.div style={{scale, rotate}} className="relative h-screen">
-      <Image 
-        src={Pic2}
-        alt="img"
-        placeholder="blur"
-        fill
-      />
+    <motion.div style={{ scale, rotate }} className="relative h-screen">
+      <Image src={Pic2} alt="Portfolio Background" placeholder="blur" fill priority />
     </motion.div>
-  )
-}
+  );
+};
