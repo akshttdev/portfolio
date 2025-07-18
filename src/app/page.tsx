@@ -6,6 +6,7 @@ import { useScroll, useTransform, motion, MotionValue } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import Lenis from 'lenis';
 import Projects from '@/components/Projects';
+import { Navbar } from '@/components/Navbar';
 
 // Main Home Component
 export default function Home() {
@@ -28,7 +29,8 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="noise">
+    <div className="noise scrollbar-hide">
+      <Navbar />
       <main ref={container} className="relative h-[200vh]">
         <Section1 scrollYProgress={scrollYProgress} />
         <Section2 scrollYProgress={scrollYProgress} />

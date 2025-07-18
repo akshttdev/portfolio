@@ -99,7 +99,7 @@ const Projects = () => {
               key={i}
               style={{ x, y, rotate }}
               className="w-fit mx-auto group max-md:w-full"
-            onClick={() => router.push(`${project.id}`)}
+            onClick={() => router.push(`${project.url}`)}
             >
               <div className="size-full overflow-hidden">
                 <Image
@@ -113,7 +113,7 @@ const Projects = () => {
               <div className="mt-2 w-full flex justify-between">
                 <p className="project-card-txt text-[1.1rem]">{project.name}</p>
                 <p className="project-card-txt text-[1rem]">{project.category}</p>
-                <p className="project-card-txt text-[1rem]">{project.year}</p>
+                <p className="project-card-txt text-[1rem]">{project.status}</p>
               </div>
             </motion.div>
           );
