@@ -7,6 +7,8 @@ import { useEffect, useRef } from 'react';
 import Lenis from 'lenis';
 import Projects from '@/components/Projects';
 import { Navbar } from '@/components/Navbar';
+import { s } from 'framer-motion/client';
+import { spanAnimation } from '@/animations/anim';
 
 // Main Home Component
 export default function Home() {
@@ -29,7 +31,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="noise scrollbar-hide">
+    <div className="noise scrollbar-hide ">
       <Navbar />
       <main ref={container} className="relative h-[200vh]">
         <Section1 scrollYProgress={scrollYProgress} />
@@ -54,6 +56,9 @@ const Section1: React.FC<SectionProps> = ({ scrollYProgress }) => {
     <motion.div
       style={{ scale, rotate }}
       className="sticky top-0 h-screen bg-gradient-to-r from-slate-900 via-slate-300 to-slate-900 text-[3.5rem] flex flex-col items-center justify-center text-black font-bold pb-[10rem]"
+      variants={spanAnimation}
+      initial="initial"
+      animate="animate"
     >
       <p>AKSHAT</p>
     </motion.div>

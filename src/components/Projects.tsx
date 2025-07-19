@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation';
 import { arraySlideUpAnimation, spanAnimation } from '@/animations/anim';
 import { useMedia } from 'react-use';
 
+
 const Projects = () => {
   const router = useRouter();
   const container = useRef<HTMLDivElement | null>(null);
@@ -18,6 +19,8 @@ const Projects = () => {
   const b = useMedia('(max-width: 1200px)');
   const c = useMedia('(max-width: 1024px)');
   const d = useMedia('(max-width: 820px)');
+
+  const currentYear = new Date().getFullYear();
 
   const { scrollYProgress } = useScroll({
     target: container,
@@ -32,7 +35,6 @@ const Projects = () => {
       ref={container}
       id="project"
     >
-      {/* Sticky Title Section */}
       <div className="sticky top-0 h-screen flex flex-col items-center justify-center z-50 !mix-blend-exclusion pointer-events-none select-none">
         <div className="flex items-start" ref={text}>
           <div className="relative flex items-start overflow-hidden">
@@ -66,12 +68,11 @@ const Projects = () => {
             initial="initial"
             animate={isInView ? 'animate' : 'initial'}
           >
-            2024 to 2025
+            2024 to {currentYear}
           </motion.span>
         </div>
       </div>
 
-      {/* Projects List */}
       <div className="flex flex-col gap-5">
         {projectsData.map((project, i) => {
           let baseX = 500;

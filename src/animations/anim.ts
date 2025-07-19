@@ -1,6 +1,8 @@
-export const arraySlideUpAnimation = {
+import { Variants } from "framer-motion";
+
+export const arraySlideUpAnimation: Variants = {
   initial: { y: "175%" },
-  animate: (i) => ({
+  animate: (i: number) => ({
     y: "0",
     transition: {
       duration: 0.5,
@@ -11,7 +13,7 @@ export const arraySlideUpAnimation = {
   exit: { y: "175%" },
 };
 
-export const spanAnimation = {
+export const spanAnimation: Variants = {
   initial: { opacity: 0, y: 100 },
   animate: {
     opacity: 1,
