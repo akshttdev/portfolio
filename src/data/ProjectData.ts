@@ -8,7 +8,7 @@ export const projectsData = [
     description:
       "A powerful web app to view and manage Apex telemetry. Built with TypeScript and modern tooling.",
     license: "MIT",
-    img: "/images/project/11.jpg",
+    img: "/images/projects/11.jpg",
     alt: "ApexView interface",
     url: "https://github.com/akshttdev/ApexView",
   },

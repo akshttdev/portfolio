@@ -7,7 +7,6 @@ import { useEffect, useRef } from 'react';
 import Lenis from 'lenis';
 import Projects from '@/components/Projects';
 import { Navbar } from '@/components/Navbar';
-import { s } from 'framer-motion/client';
 import { spanAnimation } from '@/animations/anim';
 
 // Main Home Component

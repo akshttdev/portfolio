@@ -3,50 +3,60 @@ import Link from "next/link";
 import TextScramble from "./TextScramble";
 
 export const Navbar = () => {
+  // Uses the current year dynamically.
+  const currentYear = new Date().getFullYear();
+
   return (
-    <nav className="fixed top-0 w-full z-50 mix-blend-exclusion px-6 py-6 select-none">
-      <ul className="flex items-center justify-between text-sm max-md:text-xs w-full">
-        {/* Left: Name */}
-        <li className="font-semibold tracking-wide">
-          <Link href="/" className="hover:opacity-70 transition-all">
-            akshat
+    <nav className="fixed top-0 w-full z-50 px-6 py-6 select-none mix-blend-exclusion">
+      <ul className="relative w-full h-full">
+        {/* Left Item: Akshat */}
+        <li className="absolute left-0 top-1/2 -translate-y-1/2">
+          <Link href="/" className="nav-txt">
+            <TextScramble enterText="AKSHAT" />
           </Link>
         </li>
 
-        <li className="font-medium tracking-wide flex items-center gap-36">
-          <Link href="/about" className="hover:underline transition-all">
-          <TextScramble enterText="about" />
-          </Link>
-          <span className="font-medium tracking-wide flex items-center gap-36">@2025</span>
+        {/* Center Group: About & Year */}
+        <li className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div className="flex items-center gap-x-36">
+            <div className="w-[5rem] text-left">
+              {/* FIX: Moved nav-txt class to the Link tag */}
+              <Link href="/about" className="nav-txt">
+                <TextScramble enterText="ABOUT" />
+              </Link>
+            </div>
+            <span className="nav-txt">@{currentYear}</span>
+          </div>
         </li>
 
-        {/* Right: X | Ln | Mail */}
-        <li className="flex gap-4 font-medium tracking-wide">
-          <a
-            href="https://x.com/your_x_handle"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:opacity-70 transition-all"
-          >
-            x
-          </a>
-          <a
-            href="https://linkedin.com/in/your_linkedin"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:opacity-70 transition-all"
-          >
-            ln
-          </a>
-          <a
-            href="mailto:youremail@example.com"
-            className="hover:opacity-70 transition-all"
-          >
-            mail
-          </a>
+        {/* Right Group: Social Links */}
+        <li className="absolute right-0 top-1/2 -translate-y-1/2">
+          <div className="flex items-center gap-x-6">
+            <a
+              href="https://x.com/akshttdev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-txt"
+            >
+              X
+            </a>
+            <a
+              href="https://www.linkedin.com/in/akshatdhami/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-txt"
+            >
+              LN
+            </a>
+            <div className="w-[4rem] text-left">
+              {/* FIX: Moved nav-txt class to the <a> tag */}
+              <a href="mailto:akshttt.dev@gmail.com"  className="nav-txt">
+                <TextScramble enterText="MAIL" />
+              </a>
+            </div>
+          </div>
         </li>
       </ul>
     </nav>
   );
 };
-
