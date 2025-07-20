@@ -8,6 +8,7 @@ import Lenis from 'lenis';
 import Projects from '@/components/Projects';
 import { Navbar } from '@/components/Navbar';
 import { spanAnimation } from '@/animations/anim';
+import HorizontalTransition from '@/components/HorizontalTransition'; // Import the HorizontalTransition component
 
 // Main Home Component
 export default function Home() {
@@ -30,6 +31,7 @@ export default function Home() {
   }, []);
 
   return (
+    <HorizontalTransition>
     <div className="noise scrollbar-hide ">
       <Navbar />
       <main ref={container} className="relative h-[200vh]">
@@ -38,6 +40,7 @@ export default function Home() {
       </main>
       <Projects />
     </div>
+    </HorizontalTransition>
   );
 }
 

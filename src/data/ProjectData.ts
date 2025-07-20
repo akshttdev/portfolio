@@ -119,7 +119,7 @@ export const projectsData = [
   {
     id: "rps-robot",
     name: "Rock Paper Scissors PvRobot",
-    category: "Game Dev",
+    category: "Web3/Game",
     status: "2024",
     client: "Fun",
     description:
