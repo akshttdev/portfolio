@@ -110,3 +110,9 @@ body {
   pointer-events: none;
   background: url("../../public/images/noise.gif");
 }
+
+::selection {
+  background: white;
+  color: black;
+}
+
