@@ -64,3 +64,29 @@ export const slideTextAnim: Variants = {
     y: "150%",
   },
 };
+
+export const pSlideParagraphAnim: Variants = {
+  initial: {
+    y: "170%",
+  },
+  animate: (custom) => ({
+    y: "0",
+    transition: {
+      duration: 1,
+      ease: [0.33, 1, 0.68, 1],
+      delay: 0.025 * custom,
+    },
+  }),
+};
+
+export const logoSlideAnim: Variants = {
+  initial: { opacity: 0 },
+  animate: (custom) => ({
+    opacity: 1,
+    transition: {
+      duration: 1,
+      ease: [0.33, 1, 0.68, 1],
+      delay: 0.1 * custom,
+    },
+  }),
+};

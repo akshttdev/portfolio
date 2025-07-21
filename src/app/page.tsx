@@ -7,6 +7,7 @@ import Projects from '@/components/Projects';
 import Background from '@/components/Background';
 import HorizontalTransition from '@/components/HorizontalTransition';
 import PreLoader from '@/components/Preloader';
+import About from '@/components/About';
 
 import { useState, useEffect } from 'react';
 
@@ -38,6 +39,7 @@ export default function Home() {
             <Navbar />
             <main>
               <Hero />
+              <About />
               <Background />
               <Projects />
             </main>
@@ -48,6 +50,7 @@ export default function Home() {
           <Navbar />
           <main>
             <Hero />
+            <About />
             <Background />
             <Projects />
           </main>

@@ -6,6 +6,7 @@ import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { projectsData } from '@/data/ProjectData';
 import { useRouter } from 'next/navigation';
 import { arraySlideUpAnimation, spanAnimation } from '@/animations/anim';
+import RandomLetterReveal from '@/components/RandomLetterReveal';
 import { useMedia } from 'react-use';
 
 
@@ -112,9 +113,15 @@ const Projects = () => {
                 />
               </div>
               <div className="mt-2 w-full flex justify-between">
-                <p className="project-card-txt text-[1.1rem]">{project.name}</p>
-                <p className="project-card-txt text-[1rem]">{project.category}</p>
-                <p className="project-card-txt text-[1rem]">{project.status}</p>
+                <p className="project-card-txt text-[1.1rem]">
+                  <RandomLetterReveal word={project.name} />
+                </p>
+                <p className="project-card-txt text-[1rem]">
+                  <RandomLetterReveal word={project.category} />
+                </p>
+                <p className="project-card-txt text-[1rem]">
+                  <RandomLetterReveal word={project.status} />
+                </p>
               </div>
             </motion.div>
           );
