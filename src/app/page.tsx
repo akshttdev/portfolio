@@ -28,9 +28,8 @@ export default function Home() {
 
   return (
     <div className="noise scrollbar-hide">
-      
-      <HorizontalTransition>
-        
+      <PreLoader>
+      <HorizontalTransition>  
       <Navbar />
       <main>
         <Hero />
@@ -38,6 +37,7 @@ export default function Home() {
         <Projects />
       </main>
       </HorizontalTransition>
+      </PreLoader>
     </div>
   );
 }
