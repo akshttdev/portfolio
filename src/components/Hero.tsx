@@ -20,7 +20,7 @@ const Hero: FC = () => {
                 variants={arraySlideUpAnimation}
                 initial="initial"
                 animate="animate"
-                className="text-[8rem] leading-[0.8] font-bold tracking-tight text-black max-md:text-[4rem] max-sm:text-[3rem]"
+                className="hero-txt"
               >
                 {letter}
               </motion.h1>

@@ -1,43 +1,58 @@
 'use client';
 
-import { useEffect } from 'react';
 import Lenis from 'lenis';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Projects from '@/components/Projects';
 import Background from '@/components/Background';
 import HorizontalTransition from '@/components/HorizontalTransition';
-import dynamic from 'next/dynamic';
 import PreLoader from '@/components/Preloader';
 
-const DynamicHero = dynamic(() => import('@/components/Hero'), {
-  ssr: false,
-});
+import { useState, useEffect } from 'react';
 
 export default function Home() {
-  useEffect(() => {
-    const lenis = new Lenis();
+  const [firstLoad, setFirstLoad] = useState(true);
 
+  useEffect(() => {
+    const hasLoaded = sessionStorage.getItem('hasLoaded');
+    if (hasLoaded) {
+      setFirstLoad(false);
+    } else {
+      sessionStorage.setItem('hasLoaded', 'true');
+      setFirstLoad(true);
+    }
+
+    const lenis = new Lenis();
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
-
     requestAnimationFrame(raf);
   }, []);
 
   return (
     <div className="noise scrollbar-hide">
-      <PreLoader>
-      <HorizontalTransition>  
-      <Navbar />
-      <main>
-        <Hero />
-        <Background />
-        <Projects />
-      </main>
-      </HorizontalTransition>
-      </PreLoader>
+      {firstLoad ? (
+        <PreLoader>
+          <HorizontalTransition>  
+            <Navbar />
+            <main>
+              <Hero />
+              <Background />
+              <Projects />
+            </main>
+          </HorizontalTransition>
+        </PreLoader>
+      ) : (
+        <HorizontalTransition>  
+          <Navbar />
+          <main>
+            <Hero />
+            <Background />
+            <Projects />
+          </main>
+        </HorizontalTransition>
+      )}
     </div>
   );
 }

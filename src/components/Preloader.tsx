@@ -11,6 +11,7 @@ function PreLoader({ children }: PreLoaderProps) {
   const [showChildren, setShowChildren] = useState<boolean>(false);
   const [loadingComplete, setLoadingComplete] = useState<boolean>(false);
   const [returnAnimation, setReturnAnimation] = useState<boolean>(false);
+  const currentYear = new Date().getFullYear();
 
   useEffect(() => {
     if (loadingComplete) {
@@ -27,7 +28,7 @@ function PreLoader({ children }: PreLoaderProps) {
   return (
     <>
       {!showChildren && (
-        <div className="page stairs relative">
+        <div className="page stairs relative noise scrollbar-hide">
           <div className="transition-container !bg-[#020202] h-screen flex items-center justify-center px-6">
             <AnimatePresence mode="wait">
               <div
@@ -43,7 +44,13 @@ function PreLoader({ children }: PreLoaderProps) {
                         animate="animate"
                         className="hero-txt !text-s"
                       >
-                        0
+                        <CountUp
+                          start={0}
+                          end={99}
+                          duration={0.7}
+                          delay={0.25}
+                          onEnd={() => setLoadingComplete(true)}
+                        />
                       </motion.p>
                       <motion.p
                         variants={slideTextAnim}
@@ -51,13 +58,7 @@ function PreLoader({ children }: PreLoaderProps) {
                         animate="animate"
                         className="hero-txt !text-s"
                       >
-                        <CountUp
-                          start={0}
-                          end={99}
-                          duration={0.1}
-                          delay={0.25}
-                          onEnd={() => setLoadingComplete(true)}
-                        />
+                        0
                       </motion.p>
                     </>
                   ) : (
@@ -69,7 +70,7 @@ function PreLoader({ children }: PreLoaderProps) {
                         exit="exit"
                         className="hero-txt !text-s"
                       >
-                        2025©
+                        100
                       </motion.p>
                       <motion.p
                         variants={slideTextAnim}
@@ -78,7 +79,7 @@ function PreLoader({ children }: PreLoaderProps) {
                         exit="exit"
                         className="hero-txt !text-s"
                       >
-                        100
+                        {currentYear}©
                       </motion.p>
                     </>
                   )}
