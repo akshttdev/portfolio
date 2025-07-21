@@ -14,9 +14,7 @@ export const arraySlideUpAnimation: Variants = {
 };
 
 export const horizontalAnimation: Variants = {
-  initial: {
-    left: "0%",
-  },
+  initial: {left: "0%",},
   enter: (custom: number) => ({
     left: "100%",
     transition: {
@@ -52,10 +50,8 @@ export const spanAnimation: Variants = {
   exit: { opacity: 0, y: 100 },
 };
 
-export const slideTextAnim = {
-  initial: {
-    y: "150%",
-  },
+export const slideTextAnim: Variants = {
+  initial: {y: "150%",},
   animate: (custom : number) => ({
     y: "0",
     transition: {

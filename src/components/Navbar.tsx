@@ -4,7 +4,7 @@ import TextScramble from "./TextScramble";
 import { animate } from "framer-motion";
 import { usePathname, useRouter } from "next/navigation"; // Import the necessary hooks
 
-export const Navbar = () => {
+const Navbar = () => {
   const currentYear = new Date().getFullYear();
   const router = useRouter(); // Hook to control navigation
   const pathname = usePathname(); // Hook to get the current URL path
@@ -76,3 +76,5 @@ export const Navbar = () => {
     </nav>
   );
 };
+
+export default Navbar;

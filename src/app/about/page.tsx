@@ -1,47 +1,40 @@
-// app/about/page.tsx
-'use client';
+"use client";
 
-import { useEffect } from "react";
 import { motion } from "framer-motion";
-import { slideTextAnim } from "@/animations/anim";  
-import HorizontalTransition from "@/components/HorizontalTransition"; 
-import Image from "next/image";
-import { Navbar } from "@/components/Navbar";
+import Navbar from "@/components/Navbar";
+import HorizontalTransition from "@/components/HorizontalTransition";
 
-const About = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
+export default function AboutPage() {
   return (
     <HorizontalTransition>
-      <Navbar />
-      <main className="flex w-full flex-col items-center justify-center bg-black text-white">
-        <div className="flex h-screen items-center">
-          <div className="overflow-hidden">
-            <motion.h1
-              className="text-[8rem] leading-[100%] uppercase max-md:text-[2rem]"
-              variants={slideTextAnim}
-              initial="initial"
-              animate="animate"
-              custom={0.45}
-            >
-              About
-            </motion.h1>
-          </div>
-        </div>
-        <div className="mb-40">
-          <Image
-            src={"/images/img1.jpg"} 
-            width={1000}
-            height={1000}
-            alt="A descriptive alt text"
-            className="size-full object-cover"
-          />
-        </div>
-      </main>
+    <div className="noise scrollbar-hide">
+    <Navbar />
+    <main className="h-screen w-screen bg-white text-black flex items-center justify-center p-8">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="max-w-4xl text-center space-y-6"
+      >
+        <h1 className="text-5xl font-bold tracking-tight">About</h1>
+        <p className="text-xl italic text-gray-700">
+          "Sure, I can write whatever I want about myself, but I bet ©ChatGPT 4o could do a better job."
+        </p>
+
+        <p className="text-lg leading-relaxed">
+          Akshat is a builder at heart — whether it's crafting interactive visuals or wiring up full-stack logic, he does it with intent and attitude. Every pixel, every commit, every line of code feels like it has personality.
+        </p>
+
+        <p className="text-lg leading-relaxed">
+          From hackathon hustle to late-night experiments, he moves fast but never cuts corners. His work spans from animated sort visualizers and AI-powered chat apps to UIs that *actually* make people stop and stare.
+        </p>
+
+        <p className="text-lg leading-relaxed">
+          Fueled by black-and-white minimalism and Gen Z brainrot, he's on a mission to make things that feel more alive, more expressive, and way less boring.
+        </p>
+      </motion.div>
+    </main>
+    </div>
     </HorizontalTransition>
   );
-};
-
-export default About;
+}
