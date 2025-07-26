@@ -36,7 +36,17 @@ const Projects = () => {
       ref={container}
       id="project"
     >
-      <div className="sticky top-0 h-screen flex flex-col items-center justify-center z-50 !mix-blend-exclusion pointer-events-none select-none">
+      <div className="pr-8 max-md:w-full max-md:pr-0 max-md:mb-8 z-10">
+            <h1 className="project-text">
+              A CURATED SELECTION OF MY WORK
+            </h1>
+          </div>
+          <div className="w-1/2 pl-8 max-md:w-full max-md:pl-0 z-11 pb-20">
+            <p className=" gray-300">
+              at least it felt that way
+            </p>
+          </div>
+      <div className="pt-10 sticky top-[20rem] h-screen flex flex-col items-center  z-50 !mix-blend-exclusion pointer-events-none select-none">
         <div className="flex items-start" ref={text}>
           <div className="relative flex items-start overflow-hidden">
             {['P', 'R', 'O', 'J', 'E', 'C', 'T', 'S'].map((phrase, i) => (
@@ -62,7 +72,7 @@ const Projects = () => {
           </motion.span>
         </div>
 
-        <div className="w-full ml-[250px] flex justify-center">
+        <div className="w-full flex justify-center max-md:ml-0 ml-[80px]">
           <motion.span
             className="project-year-count-txt"
             variants={spanAnimation}

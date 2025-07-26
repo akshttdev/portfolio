@@ -22,9 +22,9 @@ const Navbar = () => {
       router.push("/");
     }
   };
-
+// MAKE THIS FOR MOBILE TOO 
   return (
-    <nav className="fixed top-0 w-full z-[1001] px-6 py-6 select-none mix-blend-exclusion">
+    <nav className=" fixed top-0 w-full z-[1001] px-6 py-6 select-none mix-blend-exclusion overflow-hidden">
       <ul className="relative w-full h-full">
         <li className="absolute left-0 top-1/2 -translate-y-1/2">
           {/* The onClick now uses our new handler function */}
