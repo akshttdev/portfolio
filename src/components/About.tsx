@@ -1,68 +1,78 @@
 "use client";
 
-import { logoSlideAnim, pSlideParagraphAnim } from "@/animations/anim";
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const About = () => {
   const paragraph = useRef<HTMLDivElement>(null);
-  const clienti = useRef<HTMLDivElement>(null);
-  const container = useRef<HTMLDivElement>(null);
-
   const isInView = useInView(paragraph, { once: true });
-  const isInView2 = useInView(clienti, { once: true });
 
-  const paragraphs: string[] = [
-    "Hey there! I'm Akshat Dhami — a creative developer and tech enthusiast.",
-    "Currently pursuing my B.Tech in Computer Science at Bennett University, I'm passionate about merging code with creativity.",
-    "Whether it's building sleek UIs, exploring the latest tech, or diving into full-stack apps — I thrive on challenges.",
-    "<br/>",
-    "This site is my little playground where I showcase not just my projects, but how I think and build.",
-    "If you're into meaningful design, smart tech, and a sprinkle of Gen Z energy — you’re in the right place.",
+  const bgWords: string[] = [
+    "UI/UX",
+    "TYPESCRIPT",
+    "JAVASCRIPT",
+    "GSAP",
+    "REACT",
+    "NEXT.JS",
+    "WEB ANIMATIONS",
+    "DESIGN SYSTEMS",
+    "PROBLEM SOLVING",
+    "RIZZ",
   ];
-
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start start", "end start"],
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
 
   return (
     <section
-      className="min-h-screen w-full px-6 pt-[150px] flex max-md:pt-[75px] max-md:px-3"
+      className="relative min-h-screen w-full flex items-center justify-center px-6 pt-[150px] max-md:pt-[75px] max-md:px-3 overflow-hidden bg-p"
       id="about"
     >
-      <div
-        className="w-full flex-[2] max-lg:flex-[1.5] max-md:hidden"
-        ref={container}
-      ></div>
+      {/* Background Words */}
+      <div className="absolute inset-0 font-robert-b text-[5rem] md:text-[7rem] opacity-[0.05] select-none pointer-events-none uppercase text-s">
+        {bgWords.map((word, i) => (
+          <motion.span
+            key={i}
+            className="absolute"
+            style={{
+              top: `${Math.random() * 80}%`,   // random vertical placement
+              left: `${Math.random() * 80}%`,  // random horizontal placement
+              transform: "translate(-50%, -50%)",
+            }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 0.5, y: 0 } : {}}
+            transition={{ delay: i * 0.1, duration: 0.7 }}
+          >
+            {word}
+          </motion.span>
+        ))}
+      </div>
 
-      <motion.div
-        className="w-full flex-[2] max-lg:flex-[3]"
-        style={{ y }}
+      {/* Foreground Content */}
+      <div
+        className="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row items-start gap-10"
         ref={paragraph}
       >
-        <h2 className="mb-6 about-hero-txt flex items-center gap-2 select-none">
-          <span className="w-12 h-1 rounded-[.2rem] bg-p" />
-          about
-        </h2>
-
-        <div className="w-full max-lg:max-w-full space-y-4" ref={clienti}>
-          {paragraphs.map((text, i) => (
-            <div className="w-full " key={i}>
-              <motion.p
-                custom={i}
-                variants={pSlideParagraphAnim}
-                initial="initial"
-                animate={isInView ? "animate" : ""}
-                className="about-description-txt"
-                dangerouslySetInnerHTML={{ __html: text }}
-              />
-            </div>
-          ))}
+        {/* Divider + Description */}
+        <div className="flex flex-col items-center max-w-xs text-sm text-s font-robert-m leading-relaxed tracking-tight">
+          <div className="h-40 w-[1px] bg-s opacity-60" />
+          <p className="mt-6">
+            just turning ideas into functional designs, overthinking every
+            detail, diving into frustration, obsessing over perfection,
+            rethinking it all and… finally — delivering.
+          </p>
         </div>
-      </motion.div>
+
+        {/* Main Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.9, ease: "easeOut" }}
+          className="hero-txt font-robert-b uppercase text-s leading-[1.1] tracking-[-2px] text-[2.8rem] md:text-[3.5rem] ml-auto text-right"
+        >
+          <p>I’m just doing</p>
+          <p>design as other</p>
+          <p>nothing too</p>
+          <p>fancy</p>
+        </motion.div>
+      </div>
     </section>
   );
 };

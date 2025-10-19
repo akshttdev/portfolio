@@ -21,7 +21,7 @@ export const projectsData = [
     description:
       "A Whisper + Swift powered transcription app for iOS that transcribes in real time. Built with Apple's native stack.",
     license: "MIT",
-    img: "/images/24.jpg",
+    img: "/images/projects/24.jpg",
     alt: "WhisprAi iOS App",
     url: "https://github.com/akshttdev/WhisprAi",
   },
@@ -34,7 +34,7 @@ export const projectsData = [
     description:
       "AI-based model that predicts text sentiment and factual correctness. Built for NLP experimentation.",
     license: "Private",
-    img: "/images/1.jpg",
+    img: "/images/projects/1.jpg",
     alt: "SachAi ML Interface",
     url: "https://github.com/akshttdev/SachAi",
   },
@@ -47,7 +47,7 @@ export const projectsData = [
     description:
       "Fastest lap predictions using XGBoost Regressor and minimal feature engineering. Ready for emergency deployment.",
     license: "MIT",
-    img: "/images/16.jpg",
+    img: "/images/projects/24.jpg",
     alt: "Burnout race predictor",
     url: "https://github.com/akshttdev/burnout",
   },
@@ -60,7 +60,7 @@ export const projectsData = [
     description:
       "A Windows 95 UI recreation built with Next.js. Functional Start Menu and browser with more apps coming.",
     license: "MIT",
-    img: "/images/img9.jpg",
+    img: "/images/projects/img9.jpg",
     alt: "Win95 UI",
     url: "https://github.com/akshttdev/win95",
   },
@@ -73,7 +73,7 @@ export const projectsData = [
     description:
       "An internal visual monitoring tool for web apps, written in TypeScript. Tracks UI health metrics in real-time.",
     license: "Private",
-    img: "/images/17.jpg",
+    img: "/images/projects/17.jpg",
     alt: "ThirdEye visual monitoring",
     url: "https://github.com/akshttdev/ThirdEye",
   },
@@ -86,7 +86,7 @@ export const projectsData = [
     description:
       "Smooth, animated scroll experiment using vanilla JavaScript and canvas motion effects.",
     license: "MIT",
-    img: "/images/25.jpeg",
+    img: "/images/projects/25.jpeg",
     alt: "Drift animation demo",
     url: "https://github.com/akshttdev/Drift",
   },
@@ -99,7 +99,7 @@ export const projectsData = [
     description:
       "Web platform aimed at futuristic agriculture planning and crop data visualization. Built with JavaScript.",
     license: "MIT",
-    img: "/images/22.jpeg",
+    img: "/images/projects/22.jpeg",
     alt: "AgroNest interface",
     url: "https://github.com/akshttdev/AgroNestInfuturum",
   },
@@ -112,7 +112,7 @@ export const projectsData = [
     description:
       "Classic sorting algorithm visualizer built using HTML, CSS, and JS — includes bubble, quick, merge, etc.",
     license: "MIT",
-    img: "/images/23.jpeg",
+    img: "/images/projects/23.jpeg",
     alt: "Sorting Visualizer",
     url: "https://github.com/akshttdev/Sorting-Visualizer",
   },
@@ -125,7 +125,7 @@ export const projectsData = [
     description:
       "A playful Move-based robot game to play rock-paper-scissors against a basic AI. Simple and fun.",
     license: "MIT",
-    img: "/images/21.jpg",
+    img: "/images/projects/21.jpg",
     alt: "PvRobot RPS",
     url: "https://github.com/akshttdev/RockPaperScissorPvRobot",
   },

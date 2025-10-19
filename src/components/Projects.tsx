@@ -104,12 +104,12 @@ const Projects = () => {
 
           const x = useTransform(scrollYProgress, [0, 1], [0, isTablet ? 0 : xValue]);
           const y = useTransform(scrollYProgress, [0, 1], [0, isTablet ? 0 : yValue]);
-          const rotate = useTransform(scrollYProgress, [0, 1], [0, isTablet ? 0 : rotateValue]);
+          //const rotate = useTransform(scrollYProgress, [0, 1], [0, isTablet ? 0 : rotateValue]);
 
           return (
             <motion.div
               key={i}
-              style={{ x, y, rotate }}
+              style={{ x, y }}
               className="w-fit mx-auto group max-md:w-full"
             onClick={() => router.push(`${project.url}`)}
             >
