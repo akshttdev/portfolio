@@ -36,17 +36,29 @@ const Projects = () => {
       ref={container}
       id="project"
     >
-      <div className="pr-8 max-md:w-full max-md:pr-0 max-md:mb-8 z-10">
-            <h1 className="project-text">
-              A CURATED SELECTION OF MY WORK
-            </h1>
-          </div>
-          <div className="w-1/2 pl-8 max-md:w-full max-md:pl-0 z-11 pb-20">
-            <p className=" gray-300">
-              at least it felt that way
-            </p>
-          </div>
-      <div className="pt-10 sticky top-[20rem] h-screen flex flex-col items-center  z-50 !mix-blend-exclusion pointer-events-none select-none">
+      
+      {/*<div className="flex flex-wrap justify-between items-start w-full pb-50 pt-30">
+        <div className="w-4/7 pr-8 max-md:w-full max-md:pr-0 max-md:mb-8 z-10">
+          <h1 className="project-subtxt">
+            <RandomLetterReveal word="A CURATED" />
+          </h1>
+          <h1 className="project-subtxt">
+            <RandomLetterReveal word="OF MY WORK" />
+          </h1>
+        </div>
+
+        <div className="w-3/7 pl-8 max-md:w-full max-md:pl-0 ">
+          <h1 className="project-subtxt">
+            <RandomLetterReveal word="SELECTION" />
+          </h1>
+          <p className="project-subtxt-white mt-2">
+            <RandomLetterReveal word="at least it felt that way" />
+          </p>
+        </div>
+      </div>*/}
+
+
+      <div className="pt-30 sticky top-[20rem] h-screen flex flex-col items-center  z-50 !mix-blend-exclusion pointer-events-none select-none">
         <div className="flex items-start" ref={text}>
           <div className="relative flex items-start overflow-hidden">
             {['P', 'R', 'O', 'J', 'E', 'C', 'T', 'S'].map((phrase, i) => (
@@ -137,6 +149,19 @@ const Projects = () => {
           );
         })}
       </div>
+
+      {/* Animated Vertical Line */}
+    {/*<motion.div
+      className="absolute top-0 bottom-0 left-[39.6%] w-[1.5px] bg-white z-[-1]"
+      initial={{ scaleY: 0, originY: 0 }}
+      animate={isInView ? { scaleY: 1 } : { scaleY: 0 }}
+      transition={{
+        duration: 1.2,
+        ease: 'easeInOut',
+        delay: 1, // waits until your text animation finishes
+      }}
+    />*/}
+
     </section>
   );
 };

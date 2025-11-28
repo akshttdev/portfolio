@@ -35,22 +35,18 @@ export default function Home() {
     <div className="noise scrollbar-hide">
       {firstLoad ? (
         <PreLoader>
-          <HorizontalTransition>  
             <Navbar />
             <main>
               <Hero />
-              <About />
               <Background />
               <Projects />
             </main>
-          </HorizontalTransition>
         </PreLoader>
       ) : (
         <HorizontalTransition>  
           <Navbar />
           <main>
             <Hero />
-            <About />
             <Background />
             <Projects />
           </main>
