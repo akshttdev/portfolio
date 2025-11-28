@@ -85,9 +85,9 @@ EXPERIENCES. I BLEND UI/UX, MOTION, AND CLEAN ENGINEERING TO CREATE
 PRODUCTS THAT FEEL FAST, MODERN, AND HUMAN. I LOVE EXPERIMENTING 
 WITH MOTION, INTERACTION, AND MICRO DETAILS THAT MAKE INTERFACES 
 FEEL ALIVE. ALWAYS EXPLORING, ALWAYS LEARNING CRAFTING DIGITAL WORK 
-THAT FEELS EXPRESSIVE AND INTENTIONAL.`}
-              className="text-[0.65rem] sm:text-xs md:text-base opacity-80 
-                         leading-relaxed uppercase font-medium  text-left whitespace-pre-line tracking-wide"
+THAT FEELS EXPRESSIVE, INTENTIONAL AND REALLY COOL.`}
+              className="text-[0.5rem] sm:text-xs md:text-base opacity-80 
+                         leading-relaxed uppercase font-medium  text-left whitespace-pre-line "
             />
 
           </div>
