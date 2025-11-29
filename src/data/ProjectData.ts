@@ -1,43 +1,18 @@
 export const projectsData = [
   {
-    id: "apexview",
-    name: "ApexView",
-    category: "TypeScript / Fullstack",
-    status: "in progress",
-    client: "Internal",
-    description:
-      "A powerful web app to view and manage Apex telemetry. Built with TypeScript and modern tooling.",
-    license: "MIT",
-    img: "/images/projects/11.jpg",
-    alt: "ApexView interface",
-    url: "https://github.com/akshttdev/ApexView",
-  },
-  {
-    id: "whisprai",
-    name: "WhisprAi",
-    category: "iOS / Swift",
-    status: "in progress",
+    id: "synapse",
+    name: "Synapse",
+    category: "System / ML",
+    status: "2025",
     client: "Experimental",
     description:
-      "A Whisper + Swift powered transcription app for iOS that transcribes in real time. Built with Apple's native stack.",
-    license: "MIT",
-    img: "/images/projects/24.jpg",
-    alt: "WhisprAi iOS App",
-    url: "https://github.com/akshttdev/WhisprAi",
-  },
-  {
-    id: "sachai",
-    name: "SachAi",
-    category: "Python / ML",
-    status: "in progress",
-    client: "Experimental",
-    description:
-      "AI-based model that predicts text sentiment and factual correctness. Built for NLP experimentation.",
+      ".",
     license: "Private",
     img: "/images/projects/1.jpg",
-    alt: "SachAi ML Interface",
-    url: "https://github.com/akshttdev/SachAi",
+    alt: "",
+    url: "https://github.com/akshttdev/Synapse",
   },
+
   {
     id: "burnout",
     name: "Burnout",
@@ -51,19 +26,7 @@ export const projectsData = [
     alt: "Burnout race predictor",
     url: "https://github.com/akshttdev/burnout",
   },
-  {
-    id: "win95",
-    name: "Win95 Web",
-    category: "Frontend / Retro UI",
-    status: "in progress",
-    client: "Fun / Concept",
-    description:
-      "A Windows 95 UI recreation built with Next.js. Functional Start Menu and browser with more apps coming.",
-    license: "MIT",
-    img: "/images/projects/img9.jpg",
-    alt: "Win95 UI",
-    url: "https://github.com/akshttdev/win95",
-  },
+ 
   {
     id: "thirdeye",
     name: "ThirdEye",
@@ -77,19 +40,7 @@ export const projectsData = [
     alt: "ThirdEye visual monitoring",
     url: "https://github.com/akshttdev/ThirdEye",
   },
-  {
-    id: "drift",
-    name: "Drift",
-    category: "Frontend Animation",
-    status: "in progress",
-    client: "Demo",
-    description:
-      "Smooth, animated scroll experiment using vanilla JavaScript and canvas motion effects.",
-    license: "MIT",
-    img: "/images/projects/25.jpeg",
-    alt: "Drift animation demo",
-    url: "https://github.com/akshttdev/Drift",
-  },
+
   {
     id: "agronest",
     name: "AgroNest Infuturum",

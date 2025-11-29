@@ -7,8 +7,7 @@ import Projects from '@/components/Projects';
 import Background from '@/components/Background';
 import HorizontalTransition from '@/components/HorizontalTransition';
 import PreLoader from '@/components/Preloader';
-import About from '@/components/About';
-
+import Footer from '@/components/Footer'
 import { useState, useEffect } from 'react';
 
 export default function Home() {
@@ -40,6 +39,7 @@ export default function Home() {
               <Hero />
               <Background />
               <Projects />
+              <Footer/>
             </main>
         </PreLoader>
       ) : (
@@ -49,6 +49,7 @@ export default function Home() {
             <Hero />
             <Background />
             <Projects />
+            <Footer/>
           </main>
         </HorizontalTransition>
       )}

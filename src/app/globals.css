@@ -100,7 +100,18 @@ body {
   }
 }
 
-
+.noise::before {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  content: '';
+  opacity: 0.06;
+  z-index: 10;
+  pointer-events: none;
+  background: url("../../public/images/noise.gif");
+}
 
 ::selection {
   background: white;

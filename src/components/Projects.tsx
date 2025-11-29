@@ -9,7 +9,6 @@ import { arraySlideUpAnimation, spanAnimation } from '@/animations/anim';
 import RandomLetterReveal from '@/components/RandomLetterReveal';
 import { useMedia } from 'react-use';
 
-
 const Projects = () => {
   const router = useRouter();
   const container = useRef<HTMLDivElement | null>(null);
@@ -36,32 +35,13 @@ const Projects = () => {
       ref={container}
       id="project"
     >
-      
-      {/*<div className="flex flex-wrap justify-between items-start w-full pb-50 pt-30">
-        <div className="w-4/7 pr-8 max-md:w-full max-md:pr-0 max-md:mb-8 z-10">
-          <h1 className="project-subtxt">
-            <RandomLetterReveal word="A CURATED" />
-          </h1>
-          <h1 className="project-subtxt">
-            <RandomLetterReveal word="OF MY WORK" />
-          </h1>
-        </div>
 
-        <div className="w-3/7 pl-8 max-md:w-full max-md:pl-0 ">
-          <h1 className="project-subtxt">
-            <RandomLetterReveal word="SELECTION" />
-          </h1>
-          <p className="project-subtxt-white mt-2">
-            <RandomLetterReveal word="at least it felt that way" />
-          </p>
-        </div>
-      </div>*/}
-
-
-      <div className="pt-30 sticky top-[20rem] h-screen flex flex-col items-center  z-50 !mix-blend-exclusion pointer-events-none select-none">
+      {/* PROJECTS TITLE */}
+      <div className="pt-30 sticky top-[20rem] h-screen flex flex-col items-center z-50 mix-blend-exclusion pointer-events-none select-none">
+        
         <div className="flex items-start" ref={text}>
           <div className="relative flex items-start overflow-hidden">
-            {['P', 'R', 'O', 'J', 'E', 'C', 'T', 'S'].map((phrase, i) => (
+            {['P','R','O','J','E','C','T','S'].map((char, i) => (
               <motion.h2
                 key={i}
                 custom={i}
@@ -70,10 +50,11 @@ const Projects = () => {
                 animate={isInView ? 'animate' : 'initial'}
                 className="project-txt"
               >
-                {phrase}
+                {char}
               </motion.h2>
             ))}
           </div>
+
           <motion.span
             className="project-length-txt"
             variants={spanAnimation}
@@ -96,34 +77,23 @@ const Projects = () => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-5">
+      {/* PROJECT CARDS */}
+      <div className="flex flex-col gap-5 mt-10">
         {projectsData.map((project, i) => {
-          let baseX = 500;
-
-          if (d) {
-            baseX = 100;
-          } else if (c) {
-            baseX = 150;
-          } else if (b) {
-            baseX = 200;
-          } else if (a) {
-            baseX = 250;
-          }
+          let baseX = d ? 100 : c ? 150 : b ? 200 : a ? 250 : 500;
 
           const xValue = i % 2 === 0 ? baseX + i * 10 : -baseX - i * 10;
           const yValue = i % 3 === 0 ? 50 + i * 5 : -50 - i * 5;
-          const rotateValue = i % 2 === 0 ? 1 : -1;
 
           const x = useTransform(scrollYProgress, [0, 1], [0, isTablet ? 0 : xValue]);
           const y = useTransform(scrollYProgress, [0, 1], [0, isTablet ? 0 : yValue]);
-          //const rotate = useTransform(scrollYProgress, [0, 1], [0, isTablet ? 0 : rotateValue]);
 
           return (
             <motion.div
               key={i}
               style={{ x, y }}
-              className="w-fit mx-auto group max-md:w-full"
-            onClick={() => router.push(`${project.url}`)}
+              className="w-fit mx-auto group max-md:w-full cursor-pointer"
+              onClick={() => router.push(`${project.url}`)}
             >
               <div className="size-full overflow-hidden">
                 <Image
@@ -134,6 +104,7 @@ const Projects = () => {
                   className="object-cover group-hover:scale-125 transition-all duration-500 max-md:size-full"
                 />
               </div>
+
               <div className="mt-2 w-full flex justify-between">
                 <p className="project-card-txt text-[1.1rem]">
                   <RandomLetterReveal word={project.name} />
@@ -150,17 +121,8 @@ const Projects = () => {
         })}
       </div>
 
-      {/* Animated Vertical Line */}
-    {/*<motion.div
-      className="absolute top-0 bottom-0 left-[39.6%] w-[1.5px] bg-white z-[-1]"
-      initial={{ scaleY: 0, originY: 0 }}
-      animate={isInView ? { scaleY: 1 } : { scaleY: 0 }}
-      transition={{
-        duration: 1.2,
-        ease: 'easeInOut',
-        delay: 1, // waits until your text animation finishes
-      }}
-    />*/}
+
+
 
     </section>
   );
