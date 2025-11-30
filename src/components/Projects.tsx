@@ -128,7 +128,7 @@ const Projects = () => {
     className="
       text-white/90 
       uppercase 
-      text-[0.8rem] sm:text-[0.9rem] md:text-[1.2rem] 
+      text-[0.75rem] sm:text-[0.9rem] md:text-[1.2rem] 
       leading-relaxed 
       font-medium
       max-w-2xl

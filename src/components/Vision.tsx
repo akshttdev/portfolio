@@ -37,7 +37,7 @@ const Background: FC = () => {
 <div className="absolute top-32 left-1/2 -translate-x-1/2 z-20 pointer-events-none select-none mix-blend-difference">
   <p className="text-white uppercase tracking-wide 
                 text-xs sm:text-sm md:text-base font-semibold">
-    " Discomfort Drives Growth "
+     Discomfort Drives Growth 
   </p>
 </div>
 
