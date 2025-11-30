@@ -167,6 +167,21 @@ class RetroEffectImpl extends Effect {
 
 const RetroEffect = wrapEffect(RetroEffectImpl);
 
+type DitheredWavesProps = {
+  waveSpeed: number;
+  waveFrequency: number;
+  waveAmplitude: number;
+  waveColor: [number, number, number];
+  colorNum: number;
+  pixelSize: number;
+  disableAnimation: boolean;
+  enableMouseInteraction: boolean;
+  mouseRadius: number;
+};
+
+type DitherProps = Partial<DitheredWavesProps>;
+
+
 /* ===============================
    WAVES + DITHER MAIN COMPONENT
 ================================= */
@@ -181,7 +196,7 @@ function DitheredWaves({
   disableAnimation,
   enableMouseInteraction,
   mouseRadius,
-}) {
+}:DitheredWavesProps){
   const mesh = useRef<THREE.Mesh>(null);
   const mouseRef = useRef(new THREE.Vector2());
   const { viewport, size, gl } = useThree();
@@ -275,7 +290,7 @@ export default function Dither({
   disableAnimation = false,
   enableMouseInteraction = true,
   mouseRadius = 0.3,
-}) {
+}: DitherProps) {
   return (
     <Canvas
       className="w-full h-full pointer-events-auto"

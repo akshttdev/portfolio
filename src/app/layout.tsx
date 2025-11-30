@@ -16,18 +16,20 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Akshat | Frontend Developer",
   description: "vibe coder",
+  icons: {
+    icon: "/logo.png", 
+  },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <head>
+        {/* Favicon (extra compatibility) */}
+        <link rel="icon" href="/logo.png" sizes="any" />
+      </head>
+
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <TitleSwitcher />
         {children}
       </body>
