@@ -16,10 +16,15 @@
 }
 
 body {
-  overflow: hidden;
   background-color: #0a0a0a;
-
 }
+
+@media (min-width: 768px) {
+  body.lenis {
+    overflow: hidden;
+  }
+}
+
 
 ::-webkit-scrollbar {
     display: none;
@@ -109,6 +114,7 @@ body {
   max-width: 100% !important;
   max-height: 100% !important;
 }
+
 
 
 .noise::before {

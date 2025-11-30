@@ -1,21 +1,34 @@
 "use client";
 
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 import Dither from "./Dither";
 import RandomLetterReveal from "./RandomLetterReveal";
 
 const Hero: FC = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   return (
     <section
       id="index"
       className="relative w-full h-screen flex items-center justify-center text-white overflow-hidden select-none"
     >
       {/* === Background === */}
-      <div className="absolute inset-0 -z-10 pointer-events-auto">
+      <div className="absolute inset-0 -z-10 pointer-events-none">
         <Dither
           waveColor={[1, 0, 0]}
           disableAnimation={false}
-          enableMouseInteraction={true}
+          enableMouseInteraction={!isMobile}
           mouseRadius={0.3}
           colorNum={4}
           waveAmplitude={0.3}
@@ -99,5 +112,3 @@ THAT FEELS EXPRESSIVE, INTENTIONAL AND REALLY COOL.`}
 };
 
 export default Hero;
-
-

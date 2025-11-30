@@ -29,11 +29,12 @@ export default function AboutPage() {
             uppercase tracking-wide
             whitespace-pre-line
             select-none pointer-events-none
-            max-sm:item-center 
-            max-sm:justify-center
+            max-sm:item-left 
+            max-sm:justify-left
+            max-sm:left-0
             top-24 left-8
             md:top-44 md:left-48
-            text-[1.25rem]
+            text-[1rem]
           "
         >
           {"I could oversell myself here,\nbut I bet GPT-5.1 could do better."}
