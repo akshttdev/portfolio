@@ -4,7 +4,7 @@ import Lenis from 'lenis';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Projects from '@/components/Projects';
-import Background from '@/components/Background';
+import Background from '@/components/Vision';
 import HorizontalTransition from '@/components/HorizontalTransition';
 import PreLoader from '@/components/Preloader';
 import Footer from '@/components/Footer'
