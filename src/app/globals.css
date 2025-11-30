@@ -99,6 +99,17 @@ body {
     @apply font-robert-b text-[.9rem] tracking-[-.5px] text-p uppercase;
   }
 }
+.hover-title {
+  pointer-events: auto;
+}
+
+.hover-image img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+
 
 .noise::before {
   position: fixed;

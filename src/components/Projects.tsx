@@ -123,6 +123,29 @@ const Projects = () => {
 
 
 
+<div className="w-full mt-32 px-2 relative z-[30] pointer-events-none select-none">
+  <p
+    className="
+      text-white/90 
+      uppercase 
+      text-[0.8rem] sm:text-[0.9rem] md:text-[1.2rem] 
+      leading-relaxed 
+      font-medium
+      max-w-2xl
+    "
+  >
+    <RandomLetterReveal
+      word={`Stuff changes. Taste shifts. What felt 
+insane one night might look mid the next morning. 
+These are just things I made that felt right — 
+no fake hype, no dramatic case studies… 
+" just work I actually enjoyed building once. "`}
+    />
+  </p>
+</div>
+
+
+
 
     </section>
   );

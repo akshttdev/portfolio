@@ -3,60 +3,127 @@
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import HorizontalTransition from "@/components/HorizontalTransition";
-import Dither from "@/components/Dither";
+import HoverImageReveal from "@/components/HoverImage";
+import Footer from "@/components/Footer";
+
+const bgWords = [
+  "UI/UX", "REACT", "NEXT.JS", "TYPESCRIPT",
+  "ANIMATION", "FRAMER", "GSAP",
+  "DESIGN", "SYSTEMS", "ARCHITECTURE", "PERFORMANCE",
+];
 
 export default function AboutPage() {
   return (
     <HorizontalTransition>
-      <div className="noise scrollbar-hide relative w-screen h-screen overflow-hidden">
+      <div className="noise relative w-screen min-h-screen overflow-hidden text-white bg-black">
 
-        {/* === DITHER BACKGROUND === */}
-        <div className="absolute inset-0 -z-10 pointer-events-none">
-          <Dither
-            waveColor={[1, 1, 1]}      // white-ish dither glow (change if needed)
-            disableAnimation={false}
-            enableMouseInteraction={true}
-            mouseRadius={0.3}
-            colorNum={5}
-            waveAmplitude={0.25}
-            waveFrequency={3}
-            waveSpeed={0.04}
-          />
-        </div>
-
-        {/* === NAVBAR === */}
         <Navbar />
 
-        {/* === MAIN CONTENT === */}
-        <main className="h-screen w-screen text-white flex items-center justify-center p-8">
+        {/* INTRO LINE */}
+        <div
+          className="
+            absolute 
+            z-20
+            font-semibold
+            text-sm md:text-base
+            uppercase tracking-wide
+            whitespace-pre-line
+            select-none pointer-events-none
+            max-sm:item-center 
+            max-sm:justify-center
+            top-24 left-8
+            md:top-44 md:left-48
+            text-[1.25rem]
+          "
+        >
+          {"I could oversell myself here,\nbut I bet GPT-5.1 could do better."}
+        </div>
+
+        {/* BG WORDS */}
+        <div
+          className="
+            absolute 
+            left-4 
+            top-1/2 
+            -translate-y-1/2 
+            flex flex-col 
+            opacity-[0.045]
+            leading-[0.8]
+            select-none 
+            pointer-events-none 
+            space-y-[-1rem]
+
+            max-sm:hidden
+          "
+        >
+          {bgWords.map((w, i) => (
+            <p
+              key={i}
+              className="
+                uppercase 
+                font-extrabold 
+                tracking-tighter 
+                whitespace-nowrap
+                text-[6rem] sm:text-[8rem] md:text-[10rem] lg:text-[12rem]
+              "
+            >
+              {w}
+            </p>
+          ))}
+        </div>
+
+        {/* RIGHT SIDE CONTENT */}
+        <main
+          className="
+            w-full min-h-screen 
+            flex items-center 
+            justify-end 
+
+             md:px-20 
+            relative 
+            z-20
+            pt-60
+            max-sm:justify-center 
+            max-sm:pt-40
+          "
+        >
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl text-center space-y-6 pointer-events-auto"
+            className="
+              max-w-xl 
+              space-y-8 
+              text-left
+
+              max-sm:max-w-sm
+              max-sm:text-left
+              max-sm:pt-10
+              
+            "
           >
-            <h1 className="text-5xl font-bold tracking-tight uppercase">
-              About
-            </h1>
-
-            <p className="text-xl italic opacity-80">
-              "Sure, I can write whatever I want about myself, but I bet ©ChatGPT 4o could do a better job."
+            {/* FIRST LINE WITH HOVER IMAGE */}
+            <p className="max-sm:text-s text-[1.25rem] opacity-95 leading-relaxed font-semibold uppercase">
+              <HoverImageReveal label="Akshat" image="/images/me.jpg" /> is someone who runs on curiosity,
+              instinct, and a slightly obsessive need to make things feel intentional. He digs deep into ideas,
+              takes them apart, questions the obvious, and rebuilds them with cleaner structure and sharper personality.
             </p>
 
-            <p className="text-lg leading-relaxed opacity-90">
-              Akshat is a builder at heart — whether it's crafting interactive visuals or wiring up full-stack logic, he does it with intent and attitude. Every pixel, every commit, every line of code feels like it has personality.
+            <p className="max-sm:text-s text-[1.25rem] opacity-95 leading-relaxed font-semibold uppercase">
+              He learns fast, experiments without fear, and pushes visuals until they stop feeling random.
+              Whether it's code, motion, product logic, or design systems — the goal is always the same:
+              make it feel alive and make it feel right.
             </p>
 
-            <p className="text-lg leading-relaxed opacity-90">
-              From hackathon hustle to late-night experiments, he moves fast but never cuts corners. His work spans from animated sort visualizers and AI-powered chat apps to UIs that *actually* make people stop and stare.
-            </p>
-
-            <p className="text-lg leading-relaxed opacity-90">
-              Fueled by black-and-white minimalism and Gen Z brainrot, he's on a mission to make things that feel more alive, more expressive, and way less boring.
+            <p className="max-sm:text-s text-[1.25rem] opacity-95 leading-relaxed font-semibold uppercase">
+              Away from the monitor, he’s still restless — traveling whenever he can, playing guitar,
+              running long distances, obsessing over football, blasting metal or Bollywood..
             </p>
           </motion.div>
         </main>
       </div>
+
+      <Footer />
     </HorizontalTransition>
   );
 }

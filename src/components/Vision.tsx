@@ -34,7 +34,6 @@ const Background: FC = () => {
         </motion.div>
       </div>
 
-      {/* ⭐ CENTERED "Discomfort Drives Growth" */}
 <div className="absolute top-32 left-1/2 -translate-x-1/2 z-20 pointer-events-none select-none mix-blend-difference">
   <p className="text-white uppercase tracking-wide 
                 text-xs sm:text-sm md:text-base font-semibold">
@@ -46,7 +45,7 @@ const Background: FC = () => {
       {/* MY VISION TEXT */}
       <div className="absolute bottom-1 left-6 md:left-10 z-20 pointer-events-none select-none">
         <h1 className="text-white font-extrabold tracking-tight mix-blend-difference
-                       text-[2.5rem] sm:text-[4rem] md:text-[10rem] leading-[0.9]">
+                       text-[5rem] sm:text-[4rem] md:text-[10rem] leading-[0.9]">
           MY<br />VISION
         </h1>
       </div>
