@@ -291,6 +291,10 @@ export default function Dither({
   enableMouseInteraction = true,
   mouseRadius = 0.3,
 }: DitherProps) {
+
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+  const finalMouseInteraction = isMobile ? false : enableMouseInteraction;
+
   return (
     <Canvas
       className="w-full h-full pointer-events-auto"
